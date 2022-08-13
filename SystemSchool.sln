@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemSchool", "SystemSchool\SystemSchool.csproj", "{13FFE5E1-63AA-485E-8A5C-FC1C14FF2FEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSchool", "DataSchool\DataSchool.csproj", "{8831458F-565B-4480-BF8A-596C0A651F5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13FFE5E1-63AA-485E-8A5C-FC1C14FF2FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13FFE5E1-63AA-485E-8A5C-FC1C14FF2FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13FFE5E1-63AA-485E-8A5C-FC1C14FF2FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13FFE5E1-63AA-485E-8A5C-FC1C14FF2FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8831458F-565B-4480-BF8A-596C0A651F5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8831458F-565B-4480-BF8A-596C0A651F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8831458F-565B-4480-BF8A-596C0A651F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8831458F-565B-4480-BF8A-596C0A651F5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62A7429D-E5C6-439B-B354-7422D0872E0D}
+	EndGlobalSection
+EndGlobal
