@@ -20,7 +20,23 @@ namespace SystemSchool.Controllers
         [HttpGet]
         public IEnumerable<Grado> Get()
         {
-            return Context.Grados.ToList();
+             return Context.Grados.ToList();
+
+
+        }
+
+        [HttpGet("/lista")]
+       public object JoinGrados()
+        {
+            var datos = (from grado in Context.Grados
+                         join profesor in Context.Profesores on grado.ProfesorId equals profesor.ProfesorId
+                         select new
+                         {
+                             grado.Id,
+                             grado.Nombre,
+                             profesor = profesor.Nombre + " " + profesor.Apellidos
+                         }).ToList();
+            return datos;
         }
 
         // GET api/<GradoController>/5
