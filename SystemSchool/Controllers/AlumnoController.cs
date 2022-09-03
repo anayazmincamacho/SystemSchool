@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DataSchool;
+using System.Web.Http.Cors;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace SystemSchool.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class AlumnoController : ControllerBase
@@ -58,8 +60,9 @@ namespace SystemSchool.Controllers
         }
 
         // PUT api/<AlumnoController>/5
+        
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Alumno alumno)
+        public ActionResult Put( int id,[FromBody] Alumno alumno)
         {
             if(alumno.AlumnoId == id)
             {
@@ -71,10 +74,12 @@ namespace SystemSchool.Controllers
             {
                 return BadRequest();
             }
+
         }
 
         // DELETE api/<AlumnoController>/5
         [HttpDelete("{id}")]
+        
         public ActionResult Delete(int id)
         {
             var student = Context.Alumnos.FirstOrDefault(x => x.AlumnoId == id);

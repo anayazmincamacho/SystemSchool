@@ -1,0 +1,62 @@
+<div>
+    <button mat-button (click)="openDialog()">
+      <mat-icon>
+          <span class="material-symbols-outlined">
+              work_history
+              </span>
+      </mat-icon>
+    </button>
+  </div>
+
+<section id="body">
+
+      <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" >
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef class="hearder_table"> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+            <!-- Lastname Column -->
+            <ng-container matColumnDef="apellidos">
+                <th mat-header-cell *matHeaderCellDef class="hearder_table"> Last Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.apellidos}} </td>
+            </ng-container>
+            <!-- Gender Column -->
+            <ng-container matColumnDef="genero">
+                <th mat-header-cell *matHeaderCellDef class="hearder_table"> Gender </th>
+                <td mat-cell *matCellDef="let element"> {{element.genero}} </td>
+            </ng-container>
+          <ng-container matColumnDef="actions"  >
+            <th mat-header-cell *matHeaderCellDef class="hearder_table"> Actions </th>
+            <td mat-cell *matCellDef="let element"> 
+              <button mat-button (click)="updateTeacher(element)" >
+                <mat-icon>
+                  <span class="material-symbols-outlined" >
+                    edit
+                    </span>
+                </mat-icon>
+              </button> 
+              <button mat-button (click)="deleteTeachers(element)">
+                <mat-icon>
+                  <span class="material-symbols-outlined">
+                    delete
+                    </span>
+                </mat-icon>
+              </button>
+            </td>
+          </ng-container>
+              
+                  <tr mat-header-row *matHeaderRowDef="HeaderColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: HeaderColumns;"></tr>
+                  </table>
+        
+                  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]"
+                  showFirstLastButtons 
+                  aria-label="Select page of periodic elements">
+                </mat-paginator>
+  
+        </div>
+  </section>
+

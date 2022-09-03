@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DataSchool;
+using System.Linq;
+
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace SystemSchool.Controllers
@@ -23,6 +25,25 @@ namespace SystemSchool.Controllers
         {
             return Context.AlumnoGrados.ToList();
         }
+
+        [HttpGet("/listaAlumno")]
+        public IActionResult JoinAlumnos()
+        {
+            var datos = (from alumnogrado in Context.AlumnoGrados
+                         join alumno in Context.Alumnos on alumnogrado.AlumnoId equals alumno.AlumnoId
+                         select new
+                         {
+                             alumno.Name,
+                             alumno.Apellidos,
+                             alumnogrado.GradoId,
+                             alumnogrado.Id,
+                             alumno.AlumnoId
+                         });
+            return Ok(datos);
+        }
+
+
+
 
         // GET api/<AlumnoGradoController>/5
         [HttpGet("{id}")]

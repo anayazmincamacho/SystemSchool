@@ -83,17 +83,24 @@ namespace SystemSchool.Controllers
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
-            var dato = Context.Grados.FirstOrDefault(x => x.Id == id);
-            if(dato != null)
+            var existe = Context.AlumnoGrados.Count(x => x.GradoId == id);
+            if (existe == 0)
             {
-                Context.Grados.Remove(dato);
-                Context.SaveChanges();
-                return Ok();
+                var dato = Context.Grados.FirstOrDefault(x => x.Id == id);
+                if (dato != null)
+                {
+                    Context.Grados.Remove(dato);
+                    Context.SaveChanges();
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest();
+                }
             }
-            else
-            {
-                return BadRequest();
-            }
+            else { return BadRequest(); }
+
         }
+
     }
 }

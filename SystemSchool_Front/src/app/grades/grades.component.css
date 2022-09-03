@@ -1,0 +1,16 @@
+table{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.hearder_table{
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+}
+.header{
+    top: 5%;
+    text-align: left;
+    align-items: initial;
+}
+

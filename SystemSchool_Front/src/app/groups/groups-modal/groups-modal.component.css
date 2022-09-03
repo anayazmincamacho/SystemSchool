@@ -1,0 +1,18 @@
+.popup-size
+{
+  width: 650px;
+  height: 480px;
+}
+.components{
+    width: 350px;
+}
+table{
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.hearder_table{
+  text-align: center;
+  font-weight: bold;
+  font-size: medium;
+}

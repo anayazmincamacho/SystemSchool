@@ -1,0 +1,46 @@
+<div class="popup-size">
+    <h1 mat-dialog-title>New Student</h1>
+    <div mat-dialog-content>
+     
+        <mat-grid-list cols="1" rowHeight="100">
+            <mat-grid-tile>
+                <mat-form-field class="example-full-width components" appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Student name" type="text" [(ngModel)]="StudentName">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="example-full-width components" appearance="fill">
+                    <mat-label>LastName</mat-label>
+                    <input matInput placeholder="Student LastName" type="text" [(ngModel)]="StudentLastName">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill" class="components">
+                    <mat-label>Gender</mat-label>
+                    <mat-select [(ngModel)]="StundentGender">
+                      <mat-option *ngFor="let gender of Gender" [value]="gender.value">
+                        {{gender.name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="example-full-width components" appearance="fill">
+                  <mat-label>Birth Day {{StudentDate}}</mat-label>
+                  <input matInput placeholder="dd/mm/aaaa" type="date" [(ngModel)]="StudentDate" #Fecha >
+                </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+    </div>
+    <mat-dialog-actions align="end">
+      <div *ngIf="isShownSave">
+        <button mat-raised-button (click)="saveStudent()"> Save</button>
+      </div>
+        <div *ngIf="isShown">
+          <button mat-raised-button (click)="updateStudent()"> Update</button>
+        </div>
+        
+        <button mat-raised-button (click)="closeDialog()"> Close</button>
+      </mat-dialog-actions>
+</div>

@@ -79,7 +79,7 @@ namespace SystemSchool.Controllers
                var valor = Context.Profesores.FirstOrDefault(x => x.ProfesorId == id);
                 if (valor != null)
                 {
-                    Context.Remove(id);
+                    Context.Profesores.Remove(valor);
                     Context.SaveChanges();
                     return Ok();
                 }

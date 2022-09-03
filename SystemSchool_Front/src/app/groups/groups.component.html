@@ -1,0 +1,62 @@
+<section id=" body">
+    <mat-grid-list cols="2" rowHeight="100">
+        <mat-grid-tile>
+            <mat-form-field appearance="fill" class="components">
+                <mat-label>Group</mat-label>
+                <mat-select (selectionChange)="selectChange($event)" #grupo>
+                  <mat-option *ngFor="let element of list" [value]="element.id">
+                    {{element.nombre}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <h3>{{teacher}}</h3>
+        </mat-grid-tile>
+    </mat-grid-list>
+</section>
+<section>
+  <div>
+    <button mat-button (click)="openDialog()">
+      <mat-icon>
+              <span class="material-symbols-outlined">
+        person_add
+        </span>
+      </mat-icon>
+
+    </button>
+  </div>
+</section>
+<section>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- Grade Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef class="hearder_table"> Students </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} {{element.apellidos}}</td>
+      </ng-container>
+    <ng-container matColumnDef="actions"  >
+      <th mat-header-cell *matHeaderCellDef class="hearder_table"> Actions </th>
+      <td mat-cell *matCellDef="let element"> 
+        <button mat-button >
+          <mat-icon>
+            <span class="material-symbols-outlined" >
+              delete
+              </span>
+          </mat-icon>
+        </button>
+      </td>
+    </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="HeaderColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: HeaderColumns;"></tr>
+            </table>
+  
+            <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]"
+            showFirstLastButtons 
+            aria-label="Select page of periodic elements">
+          </mat-paginator>
+
+  </div>
+</section>

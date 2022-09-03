@@ -70,9 +70,11 @@
           "configurations": {
             "production": {
               "browserTarget": "SystemSchool_Front:build:production"
+              
             },
             "development": {
               "browserTarget": "SystemSchool_Front:build:development"
+            
             }
           },
           "defaultConfiguration": "development"
