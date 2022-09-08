@@ -15,4 +15,5 @@ Url = environment.baseUrl
     const result = this.httpClient.get<any[]>(this.Url+'listaAlumno');
     return result
   }
+
 }
